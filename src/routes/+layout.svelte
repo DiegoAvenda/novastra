@@ -4,6 +4,10 @@
 	import Footer from '../lib/components/Footer.svelte';
 </script>
 
+<svelte:head>
+	<title>NOVAASTRACO Official website: Tarot & Astrology</title>
+</svelte:head>
+
 <Navbar />
 <slot />
 <Footer />

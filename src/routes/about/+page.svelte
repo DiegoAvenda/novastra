@@ -1,5 +1,5 @@
 <script>
-	import lizi from '$lib/lizi.webp';
+	import lizi from '$lib/images/lizi.webp';
 </script>
 
 <main class="flex flex-col items-center gap-6 m-8">

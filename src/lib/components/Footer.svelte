@@ -1,6 +1,6 @@
 <script>
-	import tiktok from '$lib/tiktok.svg';
-	import instagram from '$lib/insta.svg';
+	import tiktok from '$lib/images/tiktok.svg';
+	import instagram from '$lib/images/insta.svg';
 </script>
 
 <footer class="flex justify-center items-center gap-2 bg-black">
