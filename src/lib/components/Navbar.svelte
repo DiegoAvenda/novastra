@@ -35,7 +35,7 @@
 
 <style>
 	button {
-		background-image: url(../burguesa.svg);
+		background-image: url(../images/burguesa.svg);
 		border: 0;
 	}
 
@@ -47,7 +47,7 @@
 	}
 
 	nav button {
-		background-image: url(../icon-close.svg);
+		background-image: url(../images/icon-close.svg);
 	}
 
 	.toggle {
