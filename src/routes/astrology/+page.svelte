@@ -1,4 +1,5 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import birthChart from '$lib/birth-chart.avif';
 	import novastraLogo2 from '$lib/novastra-logo2.webp';
 	import space from '$lib/birthchart.jpg';
@@ -8,8 +9,10 @@
 
 	let images = [birthChart, novastraLogo2, space, lizi];
 	let currentImage = 0;
+	let direction = '';
 
 	function changeImage(index) {
+		direction = index < currentImage ? 'left' : 'right';
 		currentImage = index;
 	}
 
@@ -21,7 +24,14 @@
 </script>
 
 <div class="flex justify-center h-[28rem] px-3">
-	<img class="w-full h-full object-cover" src={images[currentImage]} alt="carousel" />
+	{#key currentImage}
+		<img
+			in:fly={{ x: 1000, duration: 600 }}
+			class="w-full h-full object-cover"
+			src={images[currentImage]}
+			alt="carousel"
+		/>
+	{/key}
 </div>
 
 <div class="flex justify-center my-2 gap-2">
