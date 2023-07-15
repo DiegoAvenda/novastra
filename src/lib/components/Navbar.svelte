@@ -1,17 +1,21 @@
 <script>
 	import { page } from '$app/stores';
+	import bag from '$lib/images/shopping-bag.svg';
 
 	let toggle = false;
 	const toggleButton = () => (toggle = !toggle);
 </script>
 
 <header class="p-4 border-b lg:pt-6">
-	<button
-		on:click={toggleButton}
-		class="z-50 absolute left-4 top-4 bg-no-repeat bg-center w-5 aspect-square xl:hidden"
-	/>
-	<div class="flex justify-center">
-		<a href="/"><h1 class="font-bold text-xl tracking-widest lg:text-4xl">NOVAASTRACO</h1></a>
+	<div class="flex justify-between items-center">
+		<button
+			on:click={toggleButton}
+			class="burger z-50 bg-no-repeat bg-center w-5 aspect-square xl:hidden"
+		/>
+		<div class="flex justify-center w-full">
+			<a href="/"><h1 class="font-bold text-xl tracking-widest lg:text-4xl">NOVAASTRACO</h1></a>
+		</div>
+		<button><img class="w-5" src={bag} alt="shopping bag icon" /></button>
 	</div>
 	<nav class:toggle>
 		<button
@@ -34,7 +38,7 @@
 </header>
 
 <style>
-	button {
+	.burger {
 		background-image: url(../images/burguesa.svg);
 		border: 0;
 	}
