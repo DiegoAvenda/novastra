@@ -10,7 +10,7 @@
 	<div class="flex justify-between items-center">
 		<button
 			on:click={toggleButton}
-			class="burger z-50 bg-no-repeat bg-center w-5 aspect-square xl:hidden"
+			class="burger bg-no-repeat bg-center w-5 aspect-square xl:hidden"
 		/>
 		<div class="flex justify-center w-full">
 			<a href="/"><h1 class="font-bold text-xl tracking-widest lg:text-4xl">NOVAASTRACO</h1></a>
@@ -22,7 +22,7 @@
 			on:click={toggleButton}
 			class="{toggle
 				? ''
-				: 'hidden'} absolute z-50 right-4 top-4 bg-no-repeat bg-center w-6 aspect-square"
+				: 'hidden'} absolute right-4 top-4 bg-no-repeat bg-center w-6 aspect-square"
 		/>
 		<ul class="font-semibold">
 			<li><a href="/tarot" class:selected={$page.url.pathname === '/tarot'}>TAROT</a></li>
@@ -40,7 +40,6 @@
 <style>
 	.burger {
 		background-image: url(../images/burguesa.svg);
-		border: 0;
 	}
 
 	ul {
