@@ -1,9 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 	import bag from '$lib/images/shopping-bag.svg';
+	import Bag from '$lib/components/Bag.svelte';
 
 	let toggle = false;
+	let toggleBag = false;
+
 	const toggleButton = () => (toggle = !toggle);
+	const toggleButtonBag = () => (toggleBag = !toggleBag);
 </script>
 
 <header class="p-4 border-b lg:pt-6">
@@ -15,7 +19,8 @@
 		<div class="flex justify-center w-full">
 			<a href="/"><h1 class="font-bold text-xl tracking-widest lg:text-4xl">NOVAASTRACO</h1></a>
 		</div>
-		<button><img class="w-5" src={bag} alt="shopping bag icon" /></button>
+		<button on:click={toggleButtonBag}><img class="w-5" src={bag} alt="shopping bag icon" /></button
+		>
 	</div>
 	<nav class:toggle>
 		<button
@@ -35,9 +40,42 @@
 			</li>
 		</ul>
 	</nav>
+
+	<section class:toggleBag>
+		<button
+			on:click={toggleButtonBag}
+			class="{toggleBag
+				? ''
+				: 'hidden'} absolute right-4 top-4 bg-no-repeat bg-center w-6 aspect-square"
+		/>
+		<Bag />
+	</section>
 </header>
 
 <style>
+	section {
+		position: fixed;
+		z-index: 1000;
+		gap: 9rem;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding-top: 3.7rem;
+		padding-left: 1.3rem;
+		padding-right: 1.3rem;
+		transform: translateX(100%);
+		transition: transform 300ms ease-in-out;
+		background: white;
+	}
+
+	section button {
+		background-image: url(../images/icon-close.svg);
+	}
+
+	.toggleBag {
+		transform: translateX(0);
+	}
+
 	.burger {
 		background-image: url(../images/burguesa.svg);
 	}

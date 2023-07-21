@@ -17,27 +17,29 @@
 	import they from '$lib/images/tarot/they.jpg';
 
 	const products = [
-		{ id: 1, name: 'YOUR FUTURE PARTNER', price: 7.42, image: { partner } },
-		{ id: 2, name: 'ONE YEAR AHEAD', price: 19.12, image: { year } },
-		{ id: 3, name: 'THREE MONTHS AHEAD', price: 13.68, image: { threeMonths } },
-		{ name: 'SIX MONTHS AHEAD', price: 16.39, image: { sixMonths } },
-		{ name: 'Messages from your angels', price: 8.99, image: { angels } },
-		{ name: 'WHO ARE YOUR DEITIES', price: 8.99, image: { deities } },
-		{ name: 'WILL WE GET BACK TOGETHER?', price: 9.99, image: { ex } },
-		{ name: 'YOUR FUTURE HUSBAND', price: 6.68, image: { husband } },
-		{ name: 'WHEN WILL I CONCEIVE?', price: 10.5, image: { pregnancy } },
-		{ name: 'ABOUT YOUR PAST LIFE', price: 8.99, image: { pastLife } },
-		{ name: 'SELF LOVE', price: 8.99, image: { selfLove } },
-		{ name: 'WHO IS YOUR SOULMATE?', price: 6.68, image: { soulMate } },
-		{ name: 'MESSAGES FROM YOUR SPIRIT GUIDES', price: 8.99, image: { spirits } },
-		{ name: 'HOW DO THEY FEEL ABOUT ME', price: 8.99, image: { they } }
+		{ name: 'YOUR FUTURE PARTNER', price: 7.42, image: partner },
+		{ name: 'ONE YEAR AHEAD', price: 19.12, image: year },
+		{ name: 'THREE MONTHS AHEAD', price: 13.68, image: threeMonths },
+		{ name: 'SIX MONTHS AHEAD', price: 16.39, image: sixMonths },
+		{ name: 'Messages from your angels', price: 8.99, image: angels },
+		{ name: 'WHO ARE YOUR DEITIES', price: 8.99, image: deities },
+		{ name: 'WILL WE GET BACK TOGETHER?', price: 9.99, image: ex },
+		{ name: 'YOUR FUTURE HUSBAND', price: 6.68, image: husband },
+		{ name: 'WHEN WILL I CONCEIVE?', price: 10.5, image: pregnancy },
+		{ name: 'ABOUT YOUR PAST LIFE', price: 8.99, image: pastLife },
+		{ name: 'SELF LOVE', price: 8.99, image: selfLove },
+		{ name: 'WHO IS YOUR SOULMATE?', price: 6.68, image: soulMate },
+		{ name: 'MESSAGES FROM YOUR SPIRIT GUIDES', price: 8.99, image: spirits },
+		{ name: 'HOW DO THEY FEEL ABOUT ME', price: 8.99, image: they }
 	];
 </script>
 
 <h1>Productos</h1>
-
-{#each products as product (product.id)}
-	<Products {product} />
-{/each}
-
+<div class="flex justify-center">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+		{#each products as product, id}
+			<Products {product} {id} />
+		{/each}
+	</div>
+</div>
 <Bag />
