@@ -122,5 +122,9 @@
 			flex-direction: column;
 			gap: 1rem;
 		}
+
+		.selected {
+			text-decoration: none;
+		}
 	}
 </style>

@@ -63,7 +63,7 @@
 	planets, houses and also ascendant, descendant, north node, south node, chiron, imum coeli,
 	midheaven, black moon Lilith and your most important aspects.
 </p>
-<p>
+<p class="mb-3">
 	💫 A natal chart tells you about your personality and why you act the way you do and why you think
 	the way you do. Through this report, you will really learn about yourself and the way other people
 	see you.
