@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
+import { browser } from '$app/environment';
 
-export const bagItems = writable([]);
+export const bagItems = writable(getStorePersistance('bagItems'));
 
 export function addToBag(product, id) {
 	bagItems.update((items) => {
@@ -36,4 +37,22 @@ export function decreaseQuantity(bagItem) {
 
 export function removeProduct(bagItem) {
 	bagItems.update((items) => items.filter((item) => item.id !== bagItem.id));
+}
+
+export function emptyBag() {
+	bagItems.set([]);
+}
+
+function getStorePersistance(key) {
+	if (!browser) {
+		return [];
+	}
+
+	const storedItems = JSON.parse(localStorage.getItem(key) || '{}');
+
+	if (Object.keys(storedItems).length <= 0) {
+		return [];
+	} else {
+		return storedItems;
+	}
 }

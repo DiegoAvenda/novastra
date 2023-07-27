@@ -13,5 +13,8 @@
 	<a href="/tarot/{slug}"><img class="mb-4" src={image} alt={title} /></a>
 	<a href="/tarot/{slug}"><h3 class="font-bold">{title}</h3></a>
 	<p class="font-bold">${price}</p>
-	<button class="mt-3 font-bold" on:click={addToBag(product, id)}>Add to bag</button>
+	<button
+		class="mt-3 font-bold underline underline-offset-8 decoration-2 decoration-[#ececec] hover:decoration-black"
+		on:click={addToBag(product, id)}>ADD TO BAG</button
+	>
 </div>
