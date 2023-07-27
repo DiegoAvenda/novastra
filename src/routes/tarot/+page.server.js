@@ -1,4 +1,4 @@
-import { tarotReadings } from './data';
+import { tarotReadings } from './data'
 
 export function load() {
 	return {
@@ -9,5 +9,5 @@ export function load() {
 			image: tarotReading.image,
 			product: tarotReading
 		}))
-	};
+	}
 }

@@ -1,17 +1,17 @@
-import partner from '$lib/images/tarot/partner.jpg';
-import year from '$lib/images/tarot/year.jpg';
-import threeMonths from '$lib/images/tarot/3months.jpg';
-import sixMonths from '$lib/images/tarot/6months.jpg';
-import angels from '$lib/images/tarot/angels.jpg';
-import deities from '$lib/images/tarot/deities.jpg';
-import ex from '$lib/images/tarot/ex.jpg';
-import husband from '$lib/images/tarot/husband.jpg';
-import pregnancy from '$lib/images/tarot/pregnancy.jpg';
-import pastLife from '$lib/images/tarot/pastLife.jpg';
-import selfLove from '$lib/images/tarot/self-love.jpg';
-import soulMate from '$lib/images/tarot/soulmate.jpg';
-import spirits from '$lib/images/tarot/spirits.jpg';
-import they from '$lib/images/tarot/they.jpg';
+import partner from '$lib/images/tarot/partner.jpg'
+import year from '$lib/images/tarot/year.jpg'
+import threeMonths from '$lib/images/tarot/3months.jpg'
+import sixMonths from '$lib/images/tarot/6months.jpg'
+import angels from '$lib/images/tarot/angels.jpg'
+import deities from '$lib/images/tarot/deities.jpg'
+import ex from '$lib/images/tarot/ex.jpg'
+import husband from '$lib/images/tarot/husband.jpg'
+import pregnancy from '$lib/images/tarot/pregnancy.jpg'
+import pastLife from '$lib/images/tarot/pastLife.jpg'
+import selfLove from '$lib/images/tarot/self-love.jpg'
+import soulMate from '$lib/images/tarot/soulmate.jpg'
+import spirits from '$lib/images/tarot/spirits.jpg'
+import they from '$lib/images/tarot/they.jpg'
 
 export const tarotReadings = [
 	{
@@ -122,4 +122,4 @@ export const tarotReadings = [
 		slug: 'how-they-feel-about-me',
 		details: '🤍 This reading has 3 tarot cards, plus 2 oracle cards.'
 	}
-];
+]

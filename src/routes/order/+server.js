@@ -1,13 +1,13 @@
-import Stripe from 'stripe';
-import { json } from '@sveltejs/kit';
+import Stripe from 'stripe'
+import { json } from '@sveltejs/kit'
 
 export const POST = async ({ request }) => {
-	const products = await request.json();
+	const products = await request.json()
 
 	const line_items = await Promise.all(
 		products.map((product) => {
-			const finalPrice = product.price;
-			const roundedNumber = Number(Math.round(parseFloat(finalPrice * 100 + 'e' + 2)) + 'e-' + 2);
+			const finalPrice = product.price
+			const roundedNumber = Number(Math.round(parseFloat(finalPrice * 100 + 'e' + 2)) + 'e-' + 2)
 
 			return {
 				price_data: {
@@ -18,9 +18,9 @@ export const POST = async ({ request }) => {
 					unit_amount: roundedNumber
 				},
 				quantity: product.quantity
-			};
+			}
 		})
-	);
+	)
 
 	try {
 		const stripe = new Stripe(
@@ -28,7 +28,7 @@ export const POST = async ({ request }) => {
 			{
 				apiVersion: '2022-11-15'
 			}
-		);
+		)
 
 		const session = await stripe.checkout.sessions.create({
 			payment_method_types: ['card'],
@@ -36,11 +36,11 @@ export const POST = async ({ request }) => {
 			mode: 'payment',
 			success_url: `${request.url}?success=true`,
 			cancel_url: request.url
-		});
+		})
 
-		return json({ stripeSession: session });
+		return json({ stripeSession: session })
 	} catch (err) {
-		console.log(err);
-		return new Response(null);
+		console.log(err)
+		return new Response(null)
 	}
-};
+}
