@@ -1,22 +1,38 @@
 <script>
-	import * as config from '$lib/config'
-	import { formatDate } from '$lib/utils.js'
-
 	export let data
+	const { posts } = data
 </script>
 
 <svelte:head>
-	<title>{config.title}</title>
+	<title>Blog with SvelteKit without markdown</title>
 </svelte:head>
 
-blog
-
 <section>
-	{#each data.posts as post}
-		<li>
-			<a href="/blog/{post.slug}">{post.title}</a>
-			<p>{formatDate(post.date)}</p>
-			<p>{post.description}</p>
-		</li>
-	{/each}
+	<h2>All Posts</h2>
+
+	<ul>
+		{#each posts as post}
+			<li>
+				<a href="/post/{post.link}">
+					{post.title}
+				</a>
+				&ndash;
+				<span class="date">{post.date.toLocaleDateString()}</span>
+			</li>
+		{/each}
+	</ul>
+	<p>
+		Check out the code on <a
+			href="https://github.com/ScriptRaccoon/blog-sveltekit-approach"
+			target="_blank"
+		>
+			GitHub</a
+		>.
+	</p>
 </section>
+
+<style>
+	ul {
+		margin-left: 1rem;
+	}
+</style>
