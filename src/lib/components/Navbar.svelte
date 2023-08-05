@@ -1,13 +1,13 @@
 <script>
-	import { page } from '$app/stores';
-	import bag from '$lib/images/shopping-bag.svg';
-	import Bag from '$lib/components/Bag.svelte';
+	import { page } from '$app/stores'
+	import bag from '$lib/images/shopping-bag.svg'
+	import Bag from '$lib/components/Bag.svelte'
 
-	let toggle = false;
-	let toggleBag = false;
+	let toggle = false
+	let toggleBag = false
 
-	const toggleButton = () => (toggle = !toggle);
-	const toggleButtonBag = () => (toggleBag = !toggleBag);
+	const toggleButton = () => (toggle = !toggle)
+	const toggleButtonBag = () => (toggleBag = !toggleBag)
 </script>
 
 <header class="p-4 border-b lg:pt-6">
@@ -32,7 +32,9 @@
 		<ul class="font-semibold">
 			<li><a href="/tarot" class:selected={$page.url.pathname === '/tarot'}>TAROT</a></li>
 			<li>
-				<a href="/astrology" class:selected={$page.url.pathname === '/astrology'}>ASTROLOGY</a>
+				<a href="/tarot/birth-chart" class:selected={$page.url.pathname === '/tarot/birth-chart'}
+					>ASTROLOGY</a
+				>
 			</li>
 			<li><a class="mr-8" href="/blog" class:selected={$page.url.pathname === '/blog'}>BLOG</a></li>
 			<li>

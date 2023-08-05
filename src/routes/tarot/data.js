@@ -12,6 +12,7 @@ import selfLove from '$lib/images/tarot/self-love.jpg'
 import soulMate from '$lib/images/tarot/soulmate.jpg'
 import spirits from '$lib/images/tarot/spirits.jpg'
 import they from '$lib/images/tarot/they.jpg'
+import birthChart from '$lib/images/birth-chart.avif'
 
 export const tarotReadings = [
 	{
@@ -121,5 +122,13 @@ export const tarotReadings = [
 		image: they,
 		slug: 'how-they-feel-about-me',
 		details: '🤍 This reading has 3 tarot cards, plus 2 oracle cards.'
+	},
+	{
+		name: 'BIRTH CHART',
+		price: 13.99,
+		image: birthChart,
+		slug: 'birth-chart',
+		details:
+			'✨ This birth chart includes: One report of 29 pages or more (in a digital pdf file), all your planets, houses and also ascendant, descendant, north node, south node, chiron, imum coeli, midheaven, black moon Lilith and your most important aspects. <br> <br> 💫 A natal chart tells you about your personality and why you act the way you do and why you think the way you do. Through this report, you will really learn about yourself and the way other people see you.'
 	}
 ]
