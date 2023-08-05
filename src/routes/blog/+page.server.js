@@ -5,8 +5,8 @@ export const load = async () => {
 		posts_paths.map(async (path) => {
 			const link = path.split('/').at(-2) ?? ''
 			const component = await import(`../../routes/post/${link}/+page.svelte`)
-			const { title, date } = component
-			return { link, title, date }
+			const { title, date, image } = component
+			return { link, title, date, image }
 		})
 	)
 
@@ -14,3 +14,5 @@ export const load = async () => {
 
 	return { posts }
 }
+
+// import post image directly from each post src/routes/post/chiron-lilith/+page.svelte import chironLilith from '$lib/images/blog/chrion-lilith-jpg'
