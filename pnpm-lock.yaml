@@ -8,6 +8,9 @@ dependencies:
   '@stripe/stripe-js':
     specifier: ^1.54.1
     version: 1.54.1
+  '@svelte-put/clickoutside':
+    specifier: ^3.0.0
+    version: 3.0.0
   stripe:
     specifier: ^12.14.0
     version: 12.14.0
@@ -417,6 +420,10 @@ packages:
 
   /@stripe/stripe-js@1.54.1:
     resolution: {integrity: sha512-smEXPu1GKMcAj9g2luT16+oXfg2jAwyc68t2Dm5wdtYl3p8PqQaZEiI8tQmboaQAjgF8pIGma6byz1T1vgmpbA==}
+    dev: false
+
+  /@svelte-put/clickoutside@3.0.0:
+    resolution: {integrity: sha512-a2aA0+uMo2LGK4bwQE+etra57cJuqQsXRkI0IM+cPzjIowqUg5CMSSeQ6YsXBJUdtzm/s6WQKcmoswK/875wtA==}
     dev: false
 
   /@sveltejs/adapter-auto@2.1.0(@sveltejs/kit@1.22.3):

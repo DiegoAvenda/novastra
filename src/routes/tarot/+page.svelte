@@ -1,8 +1,8 @@
 <script>
-	import Products from '$lib/components/Products.svelte';
-	import tarot from '$lib/images/birthchart.jpg';
+	import Products from '$lib/components/Products.svelte'
+	import tarot from '$lib/images/birthchart.jpg'
 
-	export let data;
+	export let data
 </script>
 
 <div class="lg:flex lg:flex-row-reverse">
@@ -11,12 +11,19 @@
 		<h1 class="text-center mt-2 font-bold text-xl">TAROT READINGS</h1>
 	</div>
 </div>
-<p class="mt-8 mb-14 text-center">An introduction about the tarot readings</p>
+<p class="mt-8 mb-14 text-center mx-6 sm:mx-28 lg:mx-36">
+	Explore a realm of mystical possibilities as we unveil the ancient art of Tarot readings. Our
+	website offers a diverse range of Tarot spreads, each designed to illuminate your path, answer
+	your questions, and provide clarity to the mysteries that lie ahead. Embark on a journey of
+	self-discovery and empowerment as you delve into the captivating world of Tarot. Discover the
+	wisdom that lies within the cards and uncover the revelations they hold for you. Choose from our
+	selection of Tarot readings and unlock the secrets that await your exploration.
+</p>
 
 <div class="flex justify-center my-3">
 	<div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
-		{#each data.summaries as { slug, title, price, image, product }, id}
-			<Products {slug} {title} {price} {image} {id} {product} />
+		{#each data.summaries as { slug, title, price, image, product }}
+			<Products {slug} {title} {price} {image} {product} />
 		{/each}
 	</div>
 </div>

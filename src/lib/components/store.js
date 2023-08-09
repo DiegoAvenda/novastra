@@ -3,14 +3,16 @@ import { browser } from '$app/environment'
 
 export const bagItems = writable(getStorePersistance('bagItems'))
 
-export function addToBag(product, id) {
+export function addToBag(product) {
 	bagItems.update((items) => {
-		const existingItem = items.find((item) => item.id === id)
+		const existingItem = items.find((item) => item.slug === product.slug)
 
 		if (existingItem) {
-			return items.map((item) => (item.id === id ? { ...item, quantity: item.quantity + 1 } : item))
+			return items.map((item) =>
+				item.slug === product.slug ? { ...item, quantity: item.quantity + 1 } : item
+			)
 		} else {
-			return [...items, { ...product, quantity: 1, id: id }]
+			return [...items, { ...product, quantity: 1 }]
 		}
 	})
 }
@@ -18,7 +20,7 @@ export function addToBag(product, id) {
 export function decreaseQuantity(bagItem) {
 	bagItems.update((items) => {
 		const updatedItems = items.map((item) => {
-			if (item.id === bagItem.id) {
+			if (item.slug === bagItem.slug) {
 				if (item.quantity > 1) {
 					return { ...item, quantity: item.quantity - 1 }
 				} else {
@@ -34,7 +36,7 @@ export function decreaseQuantity(bagItem) {
 }
 
 export function removeProduct(bagItem) {
-	bagItems.update((items) => items.filter((item) => item.id !== bagItem.id))
+	bagItems.update((items) => items.filter((item) => item.slug !== bagItem.slug))
 }
 
 export function emptyBag() {

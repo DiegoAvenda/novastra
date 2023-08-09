@@ -117,7 +117,7 @@ export const tarotReadings = [
 		details: '🤍This reading has 3 tarot cards, in addition to 2 oracle cards.'
 	},
 	{
-		name: 'HOW DO THEY FEEL ABOUT ME',
+		name: 'HOW THEY FEEL ABOUT ME',
 		price: 8.99,
 		image: they,
 		slug: 'how-they-feel-about-me',

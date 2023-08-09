@@ -9,16 +9,17 @@
 		<div class="mx-6 py-10 md:text-left">
 			<div class="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 				<div>
-					<h1 class="uppercase font-semibold mb-4 flex items-center">News Letter</h1>
-					<p>Subscribe to receive news from NOVAASTRACO</p>
+					<h3 class="uppercase font-semibold flex items-center">News Letter</h3>
+					<p class="my-4">Subscribe to receive news from NOVAASTRACO</p>
 					<input
 						class="border-b placeholder-black"
 						type="email"
 						placeholder="Enter your email address"
 					/>
+					<button>OK</button>
 				</div>
 				<div class="text-white">
-					<h1 class="uppercase font-semibold mb-4 flex">EXPLORE NOVASTRACOO.COM</h1>
+					<h3 class="uppercase font-semibold mb-4 flex">EXPLORE NOVASTRACOO.COM</h3>
 					<p class="mb-4">
 						<a href="/tarot">TAROT</a>
 					</p>
@@ -33,7 +34,7 @@
 					</p>
 				</div>
 				<div class="text-white flex flex-col gap-4">
-					<h1 class="uppercase font-semibold flex">ONLINE SERVICES</h1>
+					<h3 class="uppercase font-semibold flex">ONLINE SERVICES</h3>
 					<p>
 						<a href="#!">Payment Methods</a>
 					</p>
@@ -48,7 +49,7 @@
 					</p>
 				</div>
 				<div>
-					<h1 class="uppercase font-semibold mb-4 flex">Novaastra Company</h1>
+					<h3 class="uppercase font-semibold mb-4 flex">Novaastra Company</h3>
 					<p class="flex items-center mb-4">CARRERS</p>
 					<p class="flex items-center mb-4">LEGAL</p>
 					<p class="flex items-center mb-4">PRIVACY</p>
