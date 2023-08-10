@@ -1,8 +1,8 @@
 <script>
-	export let title = '';
-	export let subtitle = '';
-	export let backgroundImageUrl = '';
-	export let link = '';
+	export let title = ''
+	export let subtitle = ''
+	export let backgroundImageUrl = ''
+	export let link = ''
 </script>
 
 <section
@@ -11,7 +11,9 @@
 >
 	<h2>{title}</h2>
 	<h3 class="text-2xl sm:text-3xl lg:text-4xl">{subtitle}</h3>
-	<a href={link}><button class="bg-white text-black p-4 mt-4 text-sm">SEE MORE</button></a>
+	<a href={link} target="_blank"
+		><button class="bg-white text-black p-4 mt-4 text-sm">SEE MORE</button></a
+	>
 </section>
 
 <style>

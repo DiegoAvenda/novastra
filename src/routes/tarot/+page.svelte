@@ -8,7 +8,13 @@
 <div class="lg:flex lg:flex-row-reverse">
 	<img class="lg:w-2/4 h-[70vh] w-full object-cover" src={tarot} alt="tarot readings" />
 	<div class="lg:w-2/4 lg:flex lg:items-center lg:justify-center">
-		<h1 class="text-center mt-2 font-bold text-xl">TAROT READINGS</h1>
+		<div class="flex flex-col items-center">
+			<h1 class="text-center my-4 font-bold text-xl">TAROT READINGS</h1>
+			<a href="https://www.etsy.com/shop/novaastraco?section_id=34974715" target="_blank"
+				><button class="p-3 border-solid border-[#767676] border-2 text-[#1d1d1d]">DISCOVER</button
+				></a
+			>
+		</div>
 	</div>
 </div>
 <p class="mt-8 mb-14 text-center mx-6 sm:mx-28 lg:mx-36">

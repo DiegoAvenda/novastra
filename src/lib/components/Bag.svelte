@@ -1,7 +1,7 @@
 <script>
-	import { bagItems, decreaseQuantity, removeProduct, addToBag } from '$lib/components/store.js';
-	import { loadStripe } from '@stripe/stripe-js';
-	import { onDestroy, onMount } from 'svelte';
+	import { bagItems, decreaseQuantity, removeProduct, addToBag } from '$lib/components/store.js'
+	import { loadStripe } from '@stripe/stripe-js'
+	import { onDestroy, onMount } from 'svelte'
 	import { PUBLIC_STRIPE_KEY } from '$env/static/public'
 
 	let stripe = null
@@ -34,7 +34,7 @@
 		})
 
 		if (res !== null) {
-			const response = await res.json();
+			const response = await res.json()
 			await stripe?.redirectToCheckout({
 				sessionId: response.stripeSession.id
 			})
@@ -42,11 +42,12 @@
 	}
 
 	onMount(async () => {
-		stripe = await loadStripe('pk_test_51LloYjITT4yqczTqANfXRYudgCJyI0d7ZRfY0hDtkTJN03GB42C46Op8EFZ8O86IH2EPLhSl9gpNTD4JUxe7OhJu00FW36sGo7')
+		stripe = await loadStripe(
+			'pk_test_51LloYjITT4yqczTqANfXRYudgCJyI0d7ZRfY0hDtkTJN03GB42C46Op8EFZ8O86IH2EPLhSl9gpNTD4JUxe7OhJu00FW36sGo7'
+		)
 	})
 
-	onDestroy(unsubscribe);
-
+	onDestroy(unsubscribe)
 </script>
 
 <div>
@@ -57,30 +58,33 @@
 	{:else}
 		<ul>
 			{#each $bagItems as bagItem}
-				<div class="flex mt-16">
+				<div class="flex mt-16 gap-2 border-b">
 					<img class="w-16" src={bagItem.image} alt={bagItem.name} />
 					<div>
 						<p class="font-bold">{bagItem.name}</p>
 
-						<button on:click={addToBag(bagItem, bagItem.id)}>+</button>
-						<button on:click={decreaseQuantity(bagItem)}>-</button>
-						<button on:click={removeProduct(bagItem)}>Remove</button>
+						<button on:click={addToBag(bagItem, bagItem.id)} class="bg-black text-white px-1.5"
+							>+</button
+						>
+						<button on:click={decreaseQuantity(bagItem)} class="bg-black text-white px-1.5"
+							>-</button
+						>
+						<button
+							on:click={removeProduct(bagItem)}
+							class="text-[#767676] underline decoration-[#767676]">Remove</button
+						>
 						<div class="flex justify-between">
-							<p>Qty {bagItem.quantity}</p>
-							<p class="font-bold">${bagItem.price}</p>
+							<p class="text-[#767676]">Qty {bagItem.quantity}</p>
+							<p class="font-bold ml-28 text-[#333333]">${bagItem.price}</p>
 						</div>
 					</div>
 				</div>
 			{/each}
 		</ul>
-		<button on:click={() => checkout()}>Checkout</button>
-
-		<form method="POST">
-			<input 
-				type="submit"
-				name="comprar"
-			/>
-		</form>
-
+		<div class="flex justify-center">
+			<button on:click={() => checkout()} class="mt-16 py-2 px-14 bg-black text-white"
+				>Checkout</button
+			>
+		</div>
 	{/if}
 </div>

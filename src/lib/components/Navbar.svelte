@@ -41,7 +41,7 @@
 			{#if $bagItems.length !== 0}
 				<span class="absolute inset-0 object-right-top ml-3">
 					<div
-						class="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white"
+						class="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-black text-white"
 					>
 						{$bagItems.length}
 					</div>
@@ -49,30 +49,28 @@
 			{/if}
 		</button>
 	</div>
-	{#if toggle}
-		<nav class:toggle use:clickOutside on:outclick={toggleButton}>
-			<button
-				on:click={toggleButton}
-				class="{toggle
-					? ''
-					: 'hidden'} absolute right-4 top-4 bg-no-repeat bg-center w-6 aspect-square"
-			/>
-			<ul class="font-semibold">
-				<li><a href="/tarot" class:selected={$page.url.pathname === '/tarot'}>TAROT</a></li>
-				<li>
-					<a href="/tarot/birth-chart" class:selected={$page.url.pathname === '/tarot/birth-chart'}
-						>ASTROLOGY</a
-					>
-				</li>
-				<li>
-					<a class="mr-8" href="/blog" class:selected={$page.url.pathname === '/blog'}>BLOG</a>
-				</li>
-				<li>
-					<a href="/about" class:selected={$page.url.pathname === '/about'}>ABOUT NOVAASTRACO</a>
-				</li>
-			</ul>
-		</nav>
-	{/if}
+	<nav class:toggle>
+		<button
+			on:click={toggleButton}
+			class="{toggle
+				? ''
+				: 'hidden'} absolute right-4 top-4 bg-no-repeat bg-center w-6 aspect-square xl:hidden"
+		/>
+		<ul class="font-semibold">
+			<li><a href="/tarot" class:selected={$page.url.pathname === '/tarot'}>TAROT</a></li>
+			<li>
+				<a href="/tarot/birth-chart" class:selected={$page.url.pathname === '/tarot/birth-chart'}
+					>ASTROLOGY</a
+				>
+			</li>
+			<li>
+				<a class="mr-8" href="/blog" class:selected={$page.url.pathname === '/blog'}>BLOG</a>
+			</li>
+			<li>
+				<a href="/about" class:selected={$page.url.pathname === '/about'}>ABOUT NOVAASTRACO</a>
+			</li>
+		</ul>
+	</nav>
 	{#if toggleBag}
 		<section class:toggleBag use:clickOutside on:outclick={toggleButtonBag}>
 			<button
