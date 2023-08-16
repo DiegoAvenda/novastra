@@ -1,5 +1,6 @@
 import Stripe from 'stripe'
 import { json } from '@sveltejs/kit'
+import { PRIVATE_STRIPE_SECRET_KEY } from '$env/static/private'
 
 export const POST = async ({ request }) => {
 	const products = await request.json()
@@ -23,12 +24,9 @@ export const POST = async ({ request }) => {
 	)
 
 	try {
-		const stripe = new Stripe(
-			'sk_test_51LloYjITT4yqczTqdgG5EsNBys6IAyWx9AI0TRPeR05cDgqb9Rk8nV1Pc8Hq0Hry8ArbdijLcwwFLqkGisFMdRxc00ONvIQAyU',
-			{
-				apiVersion: '2022-11-15'
-			}
-		)
+		const stripe = new Stripe(PRIVATE_STRIPE_SECRET_KEY, {
+			apiVersion: '2022-11-15'
+		})
 
 		const session = await stripe.checkout.sessions.create({
 			payment_method_types: ['card'],

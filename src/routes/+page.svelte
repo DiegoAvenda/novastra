@@ -1,9 +1,9 @@
 <script>
-	import Product from '$lib/components/Product.svelte';
-	import hero from '$lib/images/tarot-hero.jpg';
-	import yourself from '$lib/images/future-self.jpg';
-	import partner from '$lib/images/partner.jpg';
-	import birthchart from '$lib/images/birthchart.jpg';
+	import Product from '$lib/components/Product.svelte'
+	import hero from '$lib/images/tarot-hero.jpg'
+	import yourself from '$lib/images/future-self.jpg'
+	import partner from '$lib/images/partner.jpg'
+	import birthchart from '$lib/images/birthchart.jpg'
 </script>
 
 <Product
